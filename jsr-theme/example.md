@@ -16,11 +16,11 @@ Presentation subtitle
 
 Slide Subtitle
 
-* Slide bullet text
-  * Slide bullet text
-  * Slide bullet text
-* Slide bullet text
-* Slide bullet text
+- Slide bullet text
+  - Slide bullet text
+  - Slide bullet text
+- Slide bullet text
+- Slide bullet text
 
 ---
 layout: image-right
@@ -31,11 +31,11 @@ image: https://source.unsplash.com/collection/94734566/1920x1080
 
 Colons can be used to align columns.
 
-| Tables        | Are           | Cool  |
-| ------------- |:-------------:| -----:|
+| Tables        |      Are      |  Cool |
+| ------------- | :-----------: | ----: |
 | col 3 is      | right-aligned | $1600 |
-| col 2 is      | centered      |   $12 |
-| zebra stripes | are neat      |    $1 |
+| col 2 is      |   centered    |   $12 |
+| zebra stripes |   are neat    |    $1 |
 
 ---
 layout: section
@@ -54,6 +54,7 @@ layout: fact
 ---
 
 # 100%
+
 Fact information
 
 ---
@@ -61,6 +62,7 @@ layout: quote
 ---
 
 # "Notable quote"
+
 Attribution
 
 ---
@@ -72,16 +74,16 @@ image: https://source.unsplash.com/collection/94734566/1920x1080
 
 ```ts {all|2|1-6|all}
 interface User {
-  id: number
-  firstName: string
-  lastName: string
-  role: string
+  id: number;
+  firstName: string;
+  lastName: string;
+  role: string;
 }
 
 function updateUser(id: number, update: Partial<User>) {
-  const user = getUser(id)
-  const newUser = { ...user, ...update }
-  saveUser(id, newUser)
+  const user = getUser(id);
+  const newUser = { ...user, ...update };
+  saveUser(id, newUser);
 }
 ```
 
@@ -92,4 +94,5 @@ class: "text-center"
 
 # Learn More
 
-[Documentations](https://sli.dev) / [GitHub Repo](https://github.com/slidevjs/slidev)
+[Documentations](https://sli.dev) /
+[GitHub Repo](https://github.com/slidevjs/slidev)

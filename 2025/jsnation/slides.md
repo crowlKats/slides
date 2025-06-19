@@ -34,7 +34,7 @@ Maintainer of <span v-mark.auto.yellow=0>JSR</span>
 
 <!--
 
-I am an engineer at Deno, 
+I am an engineer at Deno,
 
 -->
 
@@ -47,7 +47,7 @@ layout: two-cols-header
 ::left::
 
 - supports TypeScript out of the box
-- does ***not*** replace npm, it lives alongside it
+- does _**not**_ replace npm, it lives alongside it
 - compatible across different runtimes
 - completely open-source and free
 - Has built-in support by yarn and pnpm<br/>(but not npm)
@@ -62,8 +62,8 @@ layout: two-cols-header
     src="/typescript.png"
     class="relative size-20 left-20"
   />
-  
-  <div class="w-60 relative left-50">
+
+<div class="w-60 relative left-50">
     <div class="relative w-40 h-40 *:size-20 *:absolute *:inset-0">
       <img
         v-motion
@@ -88,8 +88,8 @@ layout: two-cols-header
       />
     </div>
   </div>
-  
-  <div class="w-60 relative">
+
+<div class="w-60 relative">
     <div class="relative w-40 h-40 *:size-20 *:absolute *:inset-0">
       <img
         v-motion
@@ -169,7 +169,7 @@ function getFinal() {
   This is a significant piece of cloud infrastructure that acts as a build-tool-in-the-cloud, saving developers from that complexity.
 
 - "does not replace npm, it lives alongside it"
-  
+
    This was a critical strategic decision for adoption.
 
    Technically, this means JSR has a compatibility layer.
@@ -201,7 +201,8 @@ Getting TypeScript to work well in npm packages is way too difficult.
 
 NPM has **stopped innovating**.
 
-The JavaScript ecosystem is known for rapid change and progress, but NPM doesn't follow suit.
+The JavaScript ecosystem is known for rapid change and progress, but NPM doesn't
+follow suit.
 
 </JumpPanel>
 
@@ -226,7 +227,8 @@ layout: three-cols
 
 <JumpContent title="Tokenless auth">
 
-Allows publish packages automatically from CI without you having to configure any static secrets. 
+Allows publish packages automatically from CI without you having to configure
+any static secrets.
 
 This is done with OIDC tokens.
 
@@ -236,7 +238,8 @@ This is done with OIDC tokens.
 
 <JumpContent title="Provenance">
 
-If you use GitHub Actions, JSR can generate package public provenance statements, which further proves the integrity of published packages.
+If you use GitHub Actions, JSR can generate package public provenance
+statements, which further proves the integrity of published packages.
 
 </JumpContent>
 
@@ -244,11 +247,13 @@ If you use GitHub Actions, JSR can generate package public provenance statements
 
 <JumpContent title="Documentation">
 
-JSR automatically generates documentation for your package from its source code and types; no need to set up a separate system or docs site.
+JSR automatically generates documentation for your package from its source code
+and types; no need to set up a separate system or docs site.
 
 </JumpContent>
 
 ::bottom::
+
 <div v-after>
 and many more...
 </div>
@@ -353,7 +358,7 @@ transition: fade-out
 
 # So, what is this "foundation"?
 
-<!-- 
+<!--
 in the talks with OpenJS & ECMA, but it's a slow process.
 
 alternatives are creating our own non-profit or seek other entities to be under.
