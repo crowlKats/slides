@@ -2,6 +2,7 @@ import { join, relative } from "@std/path";
 import { walk } from "./util.ts";
 
 await walk(async (path) => {
+  console.log(join(Deno.cwd(), "dist", path));
   const command = new Deno.Command(Deno.execPath(), {
     cwd: path,
     args: [
@@ -13,6 +14,16 @@ await walk(async (path) => {
       join(Deno.cwd(), "dist", path),
     ],
   });
-  await command.output();
-  console.log(`${path} build successfully`);
+  const output = await command.output();
+  if (output.success) {
+    console.log(`${path} build successfully`);
+  } else {
+    console.log(`${path} build failed`);
+    console.log("--- stderr ---");
+    console.log(new TextDecoder().decode(output.stderr));
+    console.log();
+    console.log("--- out ---");
+    console.log(new TextDecoder().decode(output.stdout));
+    Deno.exit(1);
+  }
 });
