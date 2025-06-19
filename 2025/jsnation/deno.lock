@@ -4,6 +4,7 @@
     "npm:@slidev/cli@^51.8.1": "51.8.1_typescript@5.8.3_vite@6.3.5__jiti@2.4.2__yaml@2.8.0__picomatch@4.0.2_vue@3.5.16__typescript@5.8.3_markdown-it@14.1.0_shiki@3.6.0_jiti@2.4.2_yaml@2.8.0",
     "npm:@slidev/theme-default@latest": "0.25.0",
     "npm:@slidev/theme-seriph@latest": "0.25.0",
+    "npm:markdown-it-magic-link@~0.1.4": "0.1.4",
     "npm:slidev-addon-excalidraw@^1.0.4": "1.0.4",
     "npm:vue@^3.5.16": "3.5.16_typescript@5.8.3"
   },
@@ -2777,6 +2778,12 @@
     "markdown-it-footnote@4.0.0": {
       "integrity": "sha512-WYJ7urf+khJYl3DqofQpYfEYkZKbmXmwxQV8c8mO/hGIhgZ1wOe7R4HLFNwqx7TjILbnC98fuyeSsin19JdFcQ=="
     },
+    "markdown-it-magic-link@0.1.4": {
+      "integrity": "sha512-Y0CgJVtqdGGeWJ+8bN+eBEr2q2ugmf5AMJWSbxBpmGcqARbKBB62biB7LwkoxtbddlmVkACYBFyjlMP/SzYlzg==",
+      "dependencies": [
+        "markdown-it"
+      ]
+    },
     "markdown-it-mdc@0.2.5_@types+markdown-it@14.1.2_markdown-it@14.1.0": {
       "integrity": "sha512-7nj5/efQlZX+OAVw5nAYEH6kXtiNmRoMf5i7WDCeFRLXl5POFQCb+9s6qIsaBHnDLVWpZC3UTIPoVStbR9+24A==",
       "dependencies": [
@@ -4154,6 +4161,7 @@
         "npm:@slidev/cli@^51.8.1",
         "npm:@slidev/theme-default@latest",
         "npm:@slidev/theme-seriph@latest",
+        "npm:markdown-it-magic-link@~0.1.4",
         "npm:slidev-addon-excalidraw@^1.0.4",
         "npm:vue@^3.5.16"
       ]

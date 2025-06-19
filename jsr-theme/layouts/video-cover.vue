@@ -9,12 +9,12 @@ const props = defineProps({
 </script>
 
 <template>
-  <video :src="props.video" loop autoplay class="absolute inset-0 object-cover -z-100" />
+  <video :src="props.video" loop autoplay class="absolute inset-0 object-cover" />
 
   <div
-    class="slidev-layout cover text-center"
+    class="slidev-layout cover text-center z-10"
   >
-    <div class="my-auto w-full">
+    <div class="my-auto w-full z-20">
       <slot />
     </div>
   </div>

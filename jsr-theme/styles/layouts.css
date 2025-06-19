@@ -91,3 +91,6 @@
   }
 }
 
+.slidev-vclick-target {
+  transition: opacity 350ms ease;
+}
