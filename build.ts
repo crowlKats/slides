@@ -2,7 +2,6 @@ import { join, relative } from "@std/path";
 import { walk } from "./util.ts";
 
 await walk(async (path) => {
-  console.log(join(Deno.cwd(), "dist", path));
   const command = new Deno.Command(Deno.execPath(), {
     cwd: path,
     args: [
