@@ -1,6 +1,7 @@
 {
   "tasks": {
-    "build": "deno run -A build.ts"
+    "build": "deno run -A build.ts",
+    "install": "deno install && deno run -A install.ts"
   },
   "imports": {
     "@std/fs": "jsr:@std/fs@^1.0.18",
