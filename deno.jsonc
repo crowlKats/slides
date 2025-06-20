@@ -1,12 +1,14 @@
 {
+  "nodeModulesDir": "auto",
   "tasks": {
+    "install": "deno install && deno run -A npm:puppeteer browsers install chrome && deno run -A install.ts",
     "build": "deno run -A build.ts",
-    "install": "deno install && deno run -A install.ts",
     "serve": "deno run -A serve.ts"
   },
   "imports": {
     "@std/fs": "jsr:@std/fs@^1.0.18",
     "@std/http": "jsr:@std/http@^1.0.18",
-    "@std/path": "jsr:@std/path@^1.1.0"
+    "@std/path": "jsr:@std/path@^1.1.0",
+    "puppeteer": "npm:puppeteer@^24.10.2"
   }
 }
