@@ -6,6 +6,10 @@ const pattern = new URLPattern({
 });
 
 Deno.serve(async (req) => {
+  if (req.url === "/") {
+    return new Response("WIP");
+  }
+
   let resp = await serveDir(req, {
     fsRoot: "dist",
     quiet: true,
