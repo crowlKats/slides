@@ -1,6 +1,6 @@
 import { join, relative } from "@std/path";
 import { walk } from "./util.ts";
-import puppeteer from "puppeteer";
+//import puppeteer from "puppeteer";
 
 await walk(async (path) => {
   const command = new Deno.Command(Deno.execPath(), {
@@ -27,6 +27,8 @@ await walk(async (path) => {
     Deno.exit(1);
   }
 });
+
+/*
 
 const command = new Deno.Command(Deno.execPath(), {
   args: ["task", "serve"],
@@ -62,3 +64,4 @@ try {
 } finally {
   child.kill();
 }
+*/
