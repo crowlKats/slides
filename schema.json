@@ -1,0 +1,74 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Conference Presentation",
+  "description": "Schema for a list of conference presentations.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "date",
+      "conference",
+      "title",
+      "duration",
+      "kind"
+    ],
+    "properties": {
+      "date": {
+        "type": "string",
+        "format": "date",
+        "description": "The date of the presentation in YYYY-MM-DD format."
+      },
+      "conference": {
+        "type": "object",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "The name of the conference."
+          },
+          "website": {
+            "type": "string",
+            "format": "uri",
+            "description": "The URL of the conference's website."
+          }
+        }
+      },
+      "title": {
+        "type": "string",
+        "description": "The title of the presentation."
+      },
+      "recording": {
+        "type": "string",
+        "format": "uri",
+        "description": "URL to recording, if it exists."
+      },
+      "kind": {
+        "type": "string",
+        "description": "The type of presentation format (e.g., 'slidev', 'google').",
+        "enum": ["slidev", "google"]
+      },
+      "href": {
+        "type": "string",
+        "format": "uri",
+        "description": "URL to the presentation, if applicable (e.g., Google Slides link).",
+        "pattern": "^https://docs\\.google\\.com/presentation/d/.*$"
+      }
+    },
+    "additionalProperties": false,
+    "allOf": [
+      {
+        "if": {
+          "properties": {
+            "kind": {
+              "const": "google"
+            }
+          }
+        },
+        "then": {
+          "required": [
+            "href"
+          ]
+        }
+      }
+    ]
+  }
+}

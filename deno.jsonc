@@ -2,13 +2,29 @@
   "nodeModulesDir": "auto",
   "tasks": {
     "install": "deno install && deno run -A npm:puppeteer browsers install chrome && deno run -A install.ts",
-    "build": "deno run -A build.ts",
+    "index": "deno run -A npm:@tailwindcss/cli -i styles.css -o ./dist/styles.css && deno run -A index.tsx",
+    "build": "deno run -A build.ts && deno task index",
     "serve": "deno run -A serve.ts"
   },
   "imports": {
     "@std/fs": "jsr:@std/fs@^1.0.18",
     "@std/http": "jsr:@std/http@^1.0.18",
     "@std/path": "jsr:@std/path@^1.1.0",
-    "puppeteer": "npm:puppeteer@^24.10.2"
+    "@tailwindcss/cli": "npm:@tailwindcss/cli@^4.1.10",
+    "preact": "npm:preact@^10.26.6",
+    "preact-render-to-string": "npm:preact-render-to-string@^6.5.13",
+    "puppeteer": "npm:puppeteer@^24.10.2",
+    "tailwindcss": "npm:tailwindcss@^4.1.10",
+    "tb-icons": "jsr:@preact-icons/tb@^1.0.12"
+  },
+  "compilerOptions": {
+    "lib": [
+      "dom",
+      "dom.asynciterable",
+      "dom.iterable",
+      "deno.ns"
+    ],
+    "jsx": "precompile",
+    "jsxImportSource": "preact"
   }
 }

@@ -28,6 +28,13 @@ await walk(async (path) => {
   }
 });
 
+await new Deno.Command(Deno.execPath(), {
+  args: ["run", "-A", "index.tsx"],
+  stdout: "null",
+  stderr: "null",
+}).output();
+
+
 /*
 
 const command = new Deno.Command(Deno.execPath(), {
