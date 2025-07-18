@@ -10,6 +10,7 @@ addons:
   - slidev-addon-excalidraw
 layout: video-cover
 video: /landing-background.mov
+colorSchema: dark
 ---
 
 <img src="/jsr.svg" class="w-32 mx-auto">
