@@ -1,5 +1,11 @@
 <template>
-  <div class="h-full flex flex-col items-center" v-click v-motion :initial="{ y: 80 }" :enter="{ y: 0 }">
+  <div
+    class="h-full flex flex-col items-center"
+    v-click
+    v-motion
+    :initial="{ y: 80 }"
+    :enter="{ y: 0 }"
+  >
     <div class="relative rounded-lg inline-block p-3 px-6 z-20 bg-[#222]/70">
       <h2 class="font-bold text-[--jsr-yellow]">
         {{ title }}
@@ -16,5 +22,5 @@
 <script setup lang="ts">
 defineProps<{
   title: string;
-}>()
+}>();
 </script>

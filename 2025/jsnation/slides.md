@@ -1,5 +1,5 @@
 ---
-theme: ../../jsr-theme
+theme: ../../themes/jsr
 title: "JSR: Building an Open Registry for the JavaScript Community"
 class: text-center
 drawings:
@@ -8,14 +8,16 @@ transition: slide-left
 mdc: true
 addons:
   - slidev-addon-excalidraw
-layout: video-cover
-video: /landing-background.mov
-colorSchema: dark
+layout: cover
 ---
 
 <img src="/jsr.svg" class="w-32 mx-auto">
 
 Building an Open Registry for the JavaScript Community
+
+<div class="absolute inset-0 -z-10">
+  <JSRBackground />
+</div>
 
 ---
 layout: intro-image

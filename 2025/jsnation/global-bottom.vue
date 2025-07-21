@@ -1,3 +1,3 @@
 <template>
-  <video src="/background.mov" autoplay loop muted playbackRate="0.75" />
+  <JSRBackground :blur="true" />
 </template>

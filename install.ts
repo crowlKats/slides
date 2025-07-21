@@ -1,12 +1,18 @@
 import { walk } from "./util.ts";
+import { walk as stdWalk } from "@std/fs";
 
-const command = new Deno.Command(Deno.execPath(), {
-  cwd: "jsr-theme",
-  args: [
-    "install",
-  ],
-});
-await command.output();
+for await (
+  const theme of stdWalk("themes", {
+    maxDepth: 1,
+    includeFiles: false,
+  })
+) {
+  const command = new Deno.Command(Deno.execPath(), {
+    cwd: theme.path,
+    args: ["install"],
+  });
+  await command.output();
+}
 
 await walk(async (path) => {
   const command = new Deno.Command(Deno.execPath(), {

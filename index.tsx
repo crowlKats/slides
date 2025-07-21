@@ -1,6 +1,6 @@
 import talks from "./talks.json" with { type: "json" };
 import { renderToString } from "preact-render-to-string";
-import { TbVideoFilled, TbPresentationFilled } from "tb-icons";
+import { TbPresentationFilled, TbVideoFilled } from "tb-icons";
 
 interface Talk {
   date: string;
@@ -28,11 +28,19 @@ function Index() {
       </head>
       <body>
         <div class="px-32 space-y-16">
-          {Object.entries(groupedTalks).toSorted(([a], [b]) => b.localeCompare(a)).map(([year, talks]) => <Year key={year} year={year} talks={talks} />)}
+          {Object.entries(groupedTalks).toSorted(([a], [b]) =>
+            b.localeCompare(a)
+          ).map(([year, talks]) => (
+            <Year
+              key={year}
+              year={year}
+              talks={talks}
+            />
+          ))}
         </div>
       </body>
     </html>
-  )
+  );
 }
 
 function Year({ year, talks }: { year: string; talks: Talk[] }) {
@@ -44,7 +52,7 @@ function Year({ year, talks }: { year: string; talks: Talk[] }) {
         {talks.map((talk) => <Talk key={talk.date} talk={talk} />)}
       </div>
     </div>
-  )
+  );
 }
 
 function Talk({ talk }: { talk: Talk }) {
@@ -54,32 +62,50 @@ function Talk({ talk }: { talk: Talk }) {
     <div class="flex flex-col h-full">
       <div class="mb-3">
         <div class="flex justify-between gap-3">
-          <img src="covers/2025_jsnation.png" class="rounded-2xl shadow w-9/10" />
+          <img
+            src="covers/2025_jsnation.png"
+            class="rounded-2xl shadow w-9/10"
+          />
 
           <div class="mt-5">
-            <a href={talk.recording}><TbPresentationFilled class="size-5" /></a>
-            {talk.recording && <a href={talk.recording}><TbVideoFilled class="size-5" /></a>}
+            <a href={talk.recording}>
+              <TbPresentationFilled class="size-5" />
+            </a>
+            {talk.recording && (
+              <a href={talk.recording}>
+                <TbVideoFilled class="size-5" />
+              </a>
+            )}
           </div>
         </div>
       </div>
 
       <div class="flex-grow flex flex-col min-h-[4.5rem]">
         <h3 class="font-semibold mt-1">
-          <span class="bg-[#272727] px-1 py-0.5 leading-relaxed">{talk.title}</span>
+          <span class="bg-[#272727] px-1 py-0.5 leading-relaxed">
+            {talk.title}
+          </span>
         </h3>
         <div class="flex justify-between items-end gap-4 text-sm mt-auto">
-          <a href={talk.conference.website} class="transition-all duration-300 hover:text-amber-500 underline underline-offset-4 decoration-dashed hover:decoration-solid truncate max-w-[50%]">{talk.conference.name}</a>
+          <a
+            href={talk.conference.website}
+            class="transition-all duration-300 hover:text-amber-500 underline underline-offset-4 decoration-dashed hover:decoration-solid truncate max-w-[50%]"
+          >
+            {talk.conference.name}
+          </a>
           <div class="flex items-center gap-2 whitespace-nowrap">
             {talk.duration && <span>{talk.duration} min</span>}
-            <time datetime={talk.date}>{date.toLocaleDateString(undefined, {
-              month: "long",
-              day: "numeric",
-            })}</time>
+            <time datetime={talk.date}>
+              {date.toLocaleDateString(undefined, {
+                month: "long",
+                day: "numeric",
+              })}
+            </time>
           </div>
         </div>
       </div>
     </div>
-  )
+  );
 }
 
 await Deno.writeTextFile("./dist/index.html", renderToString(<Index />));
